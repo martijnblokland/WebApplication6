@@ -95,20 +95,23 @@ namespace Pit4Casus.BU
         {
             using (pit4DBEntities context = new pit4DBEntities())
             {
-                Gebruiker.GebruikerNaam = gebruikernaam;
-                Gebruiker.GebruikerWachtwoord = wachtwoord;
-                Gebruiker.GebruikerFunctie = functie;
+                if (context.GebruikerSet.Any(a => a.GebruikerNaam != gebruikernaam))
+                {
+                    Gebruiker.GebruikerNaam = gebruikernaam;
+                    Gebruiker.GebruikerWachtwoord = wachtwoord;
+                    Gebruiker.GebruikerFunctie = functie;
 
-                context.GebruikerSet.Add(Gebruiker);
-                context.SaveChanges();
+                    context.GebruikerSet.Add(Gebruiker);
+                    context.SaveChanges();
 
-                // Nieuwe Gebruiker gegevens ophalen uit database
-                Gebruiker = context.GebruikerSet.Where(b => b.GebruikerNaam == gebruikernaam).FirstOrDefault();
+                    // Nieuwe Gebruiker gegevens ophalen uit database
+                    Gebruiker = context.GebruikerSet.Where(b => b.GebruikerNaam == gebruikernaam).FirstOrDefault();
 
-                gebruikerId = Gebruiker.GebruikerID;
-                gebruikerNaam = Gebruiker.GebruikerNaam;
-                gebruikerWachtwoord = Gebruiker.GebruikerWachtwoord;
-                gebruikerFunctie = Gebruiker.GebruikerFunctie;
+                    gebruikerId = Gebruiker.GebruikerID;
+                    gebruikerNaam = Gebruiker.GebruikerNaam;
+                    gebruikerWachtwoord = Gebruiker.GebruikerWachtwoord;
+                    gebruikerFunctie = Gebruiker.GebruikerFunctie;
+                }
             }
         }
 
