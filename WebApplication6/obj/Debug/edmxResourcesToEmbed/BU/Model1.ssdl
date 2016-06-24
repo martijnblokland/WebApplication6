@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pit4DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BeoordelingSet">
+    <Key>
+      <PropertyRef Name="BeoordelingID" />
+    </Key>
+    <Property Name="BeoordelingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmFilmID" Type="int" Nullable="false" />
+    <Property Name="GebruikerGebruikerID" Type="int" Nullable="false" />
+    <Property Name="Review" Type="nvarchar(max)" />
+    <Property Name="Rating" Type="int" />
+  </EntityType>
+  <EntityType Name="FilmpersoneelSet">
+    <Key>
+      <PropertyRef Name="FilmpersoneelID" />
+    </Key>
+    <Property Name="FilmpersoneelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmFilmID" Type="int" Nullable="false" />
+    <Property Name="PersoneelPersoneelID" Type="int" Nullable="false" />
+    <Property Name="KarakterNaam" Type="nvarchar(max)" />
+    <Property Name="FunctieNaam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FilmSet">
+    <Key>
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="FilmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmInspiratieID" Type="int" />
+    <Property Name="FilmRemake" Type="nvarchar(max)" />
+    <Property Name="FilmKleur" Type="bit" Nullable="false" />
+    <Property Name="FilmJaar" Type="int" Nullable="false" />
+    <Property Name="FilmTaal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FilmDuur" Type="int" Nullable="false" />
+    <Property Name="FilmNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FilmGenre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GebruikerSet">
+    <Key>
+      <PropertyRef Name="GebruikerID" />
+    </Key>
+    <Property Name="GebruikerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GebruikerNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GebruikerWachtwoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GebruikerFunctie" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersoneelSet">
+    <Key>
+      <PropertyRef Name="PersoneelID" />
+    </Key>
+    <Property Name="PersoneelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersoneelNaam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PersoneelGebDatum" Type="datetime" Nullable="false" />
+    <Property Name="PersoneelGeslacht" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersoonlijkeLijstSet">
+    <Key>
+      <PropertyRef Name="PersoonlijkeLijstID" />
+    </Key>
+    <Property Name="PersoonlijkeLijstID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmFilmID" Type="int" Nullable="false" />
+    <Property Name="GebruikerGebruikerID" Type="int" Nullable="false" />
+    <Property Name="Gezien" Type="bit" Nullable="false" />
+    <Property Name="Wenslijst" Type="bit" Nullable="false" />
+    <Property Name="InBezit" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_FilmBeoordeling">
+    <End Role="FilmSet" Type="Self.FilmSet" Multiplicity="1" />
+    <End Role="BeoordelingSet" Type="Self.BeoordelingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FilmSet">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="BeoordelingSet">
+        <PropertyRef Name="FilmFilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FilmFilmpersoneel">
+    <End Role="FilmSet" Type="Self.FilmSet" Multiplicity="1" />
+    <End Role="FilmpersoneelSet" Type="Self.FilmpersoneelSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FilmSet">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="FilmpersoneelSet">
+        <PropertyRef Name="FilmFilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FilmPersoonlijkeLijst">
+    <End Role="FilmSet" Type="Self.FilmSet" Multiplicity="1" />
+    <End Role="PersoonlijkeLijstSet" Type="Self.PersoonlijkeLijstSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FilmSet">
+        <PropertyRef Name="FilmID" />
+      </Principal>
+      <Dependent Role="PersoonlijkeLijstSet">
+        <PropertyRef Name="FilmFilmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GebruikerBeoordeling">
+    <End Role="GebruikerSet" Type="Self.GebruikerSet" Multiplicity="1" />
+    <End Role="BeoordelingSet" Type="Self.BeoordelingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GebruikerSet">
+        <PropertyRef Name="GebruikerID" />
+      </Principal>
+      <Dependent Role="BeoordelingSet">
+        <PropertyRef Name="GebruikerGebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GebruikerPersoonlijkeLijst">
+    <End Role="GebruikerSet" Type="Self.GebruikerSet" Multiplicity="1" />
+    <End Role="PersoonlijkeLijstSet" Type="Self.PersoonlijkeLijstSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GebruikerSet">
+        <PropertyRef Name="GebruikerID" />
+      </Principal>
+      <Dependent Role="PersoonlijkeLijstSet">
+        <PropertyRef Name="GebruikerGebruikerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersoneelFilmpersoneel">
+    <End Role="PersoneelSet" Type="Self.PersoneelSet" Multiplicity="1" />
+    <End Role="FilmpersoneelSet" Type="Self.FilmpersoneelSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersoneelSet">
+        <PropertyRef Name="PersoneelID" />
+      </Principal>
+      <Dependent Role="FilmpersoneelSet">
+        <PropertyRef Name="PersoneelPersoneelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="pit4DBModelStoreContainer">
+    <EntitySet Name="BeoordelingSet" EntityType="Self.BeoordelingSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilmpersoneelSet" EntityType="Self.FilmpersoneelSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilmSet" EntityType="Self.FilmSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GebruikerSet" EntityType="Self.GebruikerSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersoneelSet" EntityType="Self.PersoneelSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersoonlijkeLijstSet" EntityType="Self.PersoonlijkeLijstSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FilmBeoordeling" Association="Self.FK_FilmBeoordeling">
+      <End Role="FilmSet" EntitySet="FilmSet" />
+      <End Role="BeoordelingSet" EntitySet="BeoordelingSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FilmFilmpersoneel" Association="Self.FK_FilmFilmpersoneel">
+      <End Role="FilmSet" EntitySet="FilmSet" />
+      <End Role="FilmpersoneelSet" EntitySet="FilmpersoneelSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FilmPersoonlijkeLijst" Association="Self.FK_FilmPersoonlijkeLijst">
+      <End Role="FilmSet" EntitySet="FilmSet" />
+      <End Role="PersoonlijkeLijstSet" EntitySet="PersoonlijkeLijstSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GebruikerBeoordeling" Association="Self.FK_GebruikerBeoordeling">
+      <End Role="GebruikerSet" EntitySet="GebruikerSet" />
+      <End Role="BeoordelingSet" EntitySet="BeoordelingSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GebruikerPersoonlijkeLijst" Association="Self.FK_GebruikerPersoonlijkeLijst">
+      <End Role="GebruikerSet" EntitySet="GebruikerSet" />
+      <End Role="PersoonlijkeLijstSet" EntitySet="PersoonlijkeLijstSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersoneelFilmpersoneel" Association="Self.FK_PersoneelFilmpersoneel">
+      <End Role="PersoneelSet" EntitySet="PersoneelSet" />
+      <End Role="FilmpersoneelSet" EntitySet="FilmpersoneelSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
