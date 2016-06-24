@@ -131,6 +131,7 @@ namespace Pit4Casus.BU
                     // Nieuwe Persoonlijke Lijst Film uit database halen
                     PersoonlijkeLijst = context.PersoonlijkeLijstSet.Where(b => b.FilmFilmID == filmId).FirstOrDefault();
 
+                    persoonlijkeLijstId = PersoonlijkeLijst.PersoonlijkeLijstID;
                     filmId = PersoonlijkeLijst.FilmFilmID;
                     gebruikerId = PersoonlijkeLijst.GebruikerGebruikerID;
                     gezienStatus = PersoonlijkeLijst.Gezien;
@@ -168,12 +169,11 @@ namespace Pit4Casus.BU
                 PersoonlijkeLijst.Gezien = gezienStatus;
                 PersoonlijkeLijst.InBezit = wenslijstStatus;
                 PersoonlijkeLijst.Wenslijst = inBezitStatus;
-            }
-
-            using (pit4DBEntities context = new pit4DBEntities())
-            {
-                context.Entry(PersoonlijkeLijst).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
+                using (pit4DBEntities context = new pit4DBEntities())
+                {
+                    context.Entry(PersoonlijkeLijst).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
             }
         }
 

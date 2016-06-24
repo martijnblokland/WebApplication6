@@ -16,6 +16,12 @@ namespace Pit4Casus.CC
         List<bool> alleWenslijstStatussen = new List<bool>();
         List<bool> alleInBezitStatussen = new List<bool>();
 
+        int geselecteerdePersoonlijkeLijstId;
+        int geselecteerdeFilmId;
+        bool geselecteerdeGezienStatus;
+        bool geselecteerdeWenslijstStatus;
+        bool geselecteerdeInBezitStatus;
+
         public List<int> AllePersoonlijkeLijstIds
         {
             get
@@ -70,6 +76,21 @@ namespace Pit4Casus.CC
                     alleWenslijstStatussen.Add(PersoonlijkeLijst.WenslijstStatus);
                     alleInBezitStatussen.Add(PersoonlijkeLijst.InBezitStatus);
                 }
+            }
+        }
+
+        // Boolean geeft aan of de film kan worden geselecteerd op basis van het gebruikerid
+        public bool FilmSelecteren(int persoonlijkelijstid, int gebruikerid)
+        {
+            PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId(persoonlijkelijstid);
+            if (PersoonlijkeLijst.GebruikerId != gebruikerid)
+            {
+                PersoonlijkeLijst = new BU_PersoonlijkeLijst();
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
