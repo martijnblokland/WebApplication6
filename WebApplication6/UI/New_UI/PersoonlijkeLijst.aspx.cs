@@ -17,7 +17,7 @@ namespace WebApplication6.UI.New_UI
         {
             if (Session["login"] != null && (bool)Session["login"])
             {
-
+                
             }
             else
             {
@@ -25,28 +25,9 @@ namespace WebApplication6.UI.New_UI
             }
             int Userid = Int32.Parse(Session["userid"].ToString());
             Control_PersoonlijkeLijst = new CC_PersoonlijkeLijst(Userid);
-            if (Session["login"] != null && (bool)Session["login"])
+            Label1.Text = Control_PersoonlijkeLijst.AllePersoonlijkeLijstIds.Count.ToString();
+            for (int i = 0; i < Control_PersoonlijkeLijst.AllePersoonlijkeLijstIds.Count; i = i + 1)
             {
-
-            }
-            else
-            {
-                Response.Redirect("MsgNotLoggedIn.aspx");
-            }
-            for (int i = 0; i < Control_PersoonlijkeLijst.AlleGebruikerIds.Count; i = i + 1)
-            {
-                Label Count = new Label();
-                Count.Text = Control_PersoonlijkeLijst.AlleGebruikerIds.Count.ToString();
-
-                if (i == 0)
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('I is 0.');</script>");
-                    Label I = new Label();
-                    I.Text = i.ToString();
-                    placeholder.Controls.Add(I);
-                }
-                
-
                 Label persoonlijkeLijstIdLabel = new Label();
                 persoonlijkeLijstIdLabel.CssClass = "PersoonlijkeLijstIDLabel";
                 persoonlijkeLijstIdLabel.Text = Control_PersoonlijkeLijst.AllePersoonlijkeLijstIds[i].ToString();
@@ -67,7 +48,6 @@ namespace WebApplication6.UI.New_UI
                 wenslijstStatussenLabel.CssClass = "WenslijstStatussenLabel";
                 wenslijstStatussenLabel.Text = Control_PersoonlijkeLijst.AlleWenslijstStatussen[i] == false ? "Op Wenslijst" : "Niet Op Wenslijst";
 
-                placeholder.Controls.Add(Count);
                 placeholder.Controls.Add(persoonlijkeLijstIdLabel);
                 placeholder.Controls.Add(filmIdLabel);
                 placeholder.Controls.Add(gezienStatussenLabel);
