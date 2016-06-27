@@ -104,6 +104,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BU\Model1.edmx.sql" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -139,6 +140,25 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="UI\New_UI\Beoordeling.aspx" />
+    <Content Include="UI\New_UI\Dashboard.aspx" />
+    <Content Include="UI\New_UI\Film.aspx" />
+    <Content Include="UI\New_UI\FilmBrowser.aspx" />
+    <Content Include="UI\New_UI\FilmToevoegenAanpassen.aspx" />
+    <Content Include="UI\New_UI\Gebruikersbeheer.aspx" />
+    <Content Include="UI\New_UI\Home.aspx" />
+    <Content Include="UI\New_UI\Inloggen.aspx" />
+    <Content Include="UI\New_UI\MsgFilmSave.aspx" />
+    <Content Include="UI\New_UI\MsgLoggedIn.aspx" />
+    <Content Include="UI\New_UI\MsgLoggedOut.aspx" />
+    <Content Include="UI\New_UI\MsgNotAuth.aspx" />
+    <Content Include="UI\New_UI\MsgNotLoggedIn.aspx" />
+    <Content Include="UI\New_UI\MsgPersoneelSave.aspx" />
+    <Content Include="UI\New_UI\Personeel.aspx" />
+    <Content Include="UI\New_UI\PersoneelBrowser.aspx" />
+    <Content Include="UI\New_UI\PersoneelToevoegenAanpassen.aspx" />
+    <Content Include="UI\New_UI\PersoonlijkeLijst.aspx" />
+    <Content Include="UI\New_UI\Registreren.aspx" />
     <Content Include="UI\UI_Film.aspx" />
     <Content Include="UI\UI_FilmBrowser.aspx" />
     <Content Include="UI\UI_FilmToevoegen.aspx" />
@@ -219,6 +239,139 @@
     <Compile Include="Models\BU_Personeel.cs" />
     <Compile Include="Models\BU_PersoonlijkeLijst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\New_UI\Beoordeling.aspx.cs">
+      <DependentUpon>Beoordeling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Beoordeling.aspx.designer.cs">
+      <DependentUpon>Beoordeling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Film.aspx.cs">
+      <DependentUpon>Film.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Film.aspx.designer.cs">
+      <DependentUpon>Film.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\FilmBrowser.aspx.cs">
+      <DependentUpon>FilmBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\FilmBrowser.aspx.designer.cs">
+      <DependentUpon>FilmBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\FilmToevoegenAanpassen.aspx.cs">
+      <DependentUpon>FilmToevoegenAanpassen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\FilmToevoegenAanpassen.aspx.designer.cs">
+      <DependentUpon>FilmToevoegenAanpassen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Gebruikersbeheer.aspx.cs">
+      <DependentUpon>Gebruikersbeheer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Gebruikersbeheer.aspx.designer.cs">
+      <DependentUpon>Gebruikersbeheer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Inloggen.aspx.cs">
+      <DependentUpon>Inloggen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Inloggen.aspx.designer.cs">
+      <DependentUpon>Inloggen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgFilmSave.aspx.cs">
+      <DependentUpon>MsgFilmSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgFilmSave.aspx.designer.cs">
+      <DependentUpon>MsgFilmSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgLoggedIn.aspx.cs">
+      <DependentUpon>MsgLoggedIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgLoggedIn.aspx.designer.cs">
+      <DependentUpon>MsgLoggedIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgLoggedOut.aspx.cs">
+      <DependentUpon>MsgLoggedOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgLoggedOut.aspx.designer.cs">
+      <DependentUpon>MsgLoggedOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgNotAuth.aspx.cs">
+      <DependentUpon>MsgNotAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgNotAuth.aspx.designer.cs">
+      <DependentUpon>MsgNotAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgNotLoggedIn.aspx.cs">
+      <DependentUpon>MsgNotLoggedIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgNotLoggedIn.aspx.designer.cs">
+      <DependentUpon>MsgNotLoggedIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgPersoneelSave.aspx.cs">
+      <DependentUpon>MsgPersoneelSave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\MsgPersoneelSave.aspx.designer.cs">
+      <DependentUpon>MsgPersoneelSave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Personeel.aspx.cs">
+      <DependentUpon>Personeel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Personeel.aspx.designer.cs">
+      <DependentUpon>Personeel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoneelBrowser.aspx.cs">
+      <DependentUpon>PersoneelBrowser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoneelBrowser.aspx.designer.cs">
+      <DependentUpon>PersoneelBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoneelToevoegenAanpassen.aspx.cs">
+      <DependentUpon>PersoneelToevoegenAanpassen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoneelToevoegenAanpassen.aspx.designer.cs">
+      <DependentUpon>PersoneelToevoegenAanpassen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoonlijkeLijst.aspx.cs">
+      <DependentUpon>PersoonlijkeLijst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\PersoonlijkeLijst.aspx.designer.cs">
+      <DependentUpon>PersoonlijkeLijst.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\New_UI\Registreren.aspx.cs">
+      <DependentUpon>Registreren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\New_UI\Registreren.aspx.designer.cs">
+      <DependentUpon>Registreren.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\UI_Film.aspx.cs">
       <DependentUpon>UI_Film.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
