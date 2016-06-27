@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Beoordeling.aspx.cs" Inherits="ASPX_UI.ReviewSchrijven" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Beoordeling.aspx.cs" Inherits="WebApplication6.UI.New_UI.ReviewSchrijven" %>
 
 <!DOCTYPE html>
 

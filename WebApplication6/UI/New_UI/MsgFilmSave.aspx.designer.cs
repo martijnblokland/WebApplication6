@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASPX_UI {
+namespace WebApplication6.UI.New_UI {
     
     
     public partial class MsgFilmAdd {

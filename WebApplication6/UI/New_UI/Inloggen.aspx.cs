@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Pit4Casus.CC;
+using static WebApplication6.Global;
 
-namespace UI
+namespace WebApplication6.UI.New_UI
 {
     public partial class Inloggen : System.Web.UI.Page
     {

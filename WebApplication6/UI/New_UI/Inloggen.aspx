@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inloggen.aspx.cs" Inherits="UI.Inloggen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inloggen.aspx.cs" Inherits="WebApplication6.UI.New_UI.Inloggen" %>
 
 <!DOCTYPE html>
 

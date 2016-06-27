@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASPX_UI {
+namespace WebApplication6.UI.New_UI {
     
     
     public partial class PersoonlijkeLijst {
@@ -29,6 +29,15 @@ namespace ASPX_UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_uitloggen;
+        
+        /// <summary>
+        /// placeholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl placeholder;
         
         /// <summary>
         /// Btn_verwijderen control.

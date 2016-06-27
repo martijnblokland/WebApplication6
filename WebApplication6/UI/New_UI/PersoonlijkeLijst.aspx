@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoonlijkeLijst.aspx.cs" Inherits="ASPX_UI.PersoonlijkeLijst" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoonlijkeLijst.aspx.cs" Inherits="WebApplication6.UI.New_UI.PersoonlijkeLijst" %>
 
 <!DOCTYPE html>
 
@@ -61,6 +61,9 @@
                                     <td>Taal</td>
                                     <td>Duur</td>
                                     <td>Genre</td>
+                                    <td>Gezien</td>
+                                    <td>Wenslijst</td>
+                                    <td>In Bezit</td>
                                 </tr>
                                 <tr>
                                     <td><a href="Film.aspx">Blue Velvet</a></td>
@@ -71,12 +74,18 @@
                                     <td>Engels</td>
                                     <td>120</td>
                                     <td>Drama</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </table>
                         </td>    
                     </tr>
              </table>
         <br />
+        <div id="placeholder" runat="server">
+        <strong>ID Naam&nbsp;Jaar Taal Duur Genre Gezien Wenslijst In Bezit</strong><br />
+        </div>
         <asp:Button ID="Btn_verwijderen" runat="server" Text="Film Verwijderen Uit Persoonlijke Lijst" />
     </div>
     </form>

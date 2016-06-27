@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoneelToevoegenAanpassen.aspx.cs" Inherits="ASPX_UI.PersoneelToevoegen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoneelToevoegenAanpassen.aspx.cs" Inherits="WebApplication6.UI.New_UI.PersoneelToevoegen" %>
 
 <!DOCTYPE html>
 

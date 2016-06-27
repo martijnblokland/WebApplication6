@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Film.aspx.cs" Inherits="ASPX_UI.Film" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Film.aspx.cs" Inherits="WebApplication6.UI.New_UI.Film" %>
 
 <!DOCTYPE html>
 

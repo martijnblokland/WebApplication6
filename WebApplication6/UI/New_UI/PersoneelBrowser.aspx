@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoneelBrowser.aspx.cs" Inherits="ASPX_UI.PersoneelBrowser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersoneelBrowser.aspx.cs" Inherits="WebApplication6.UI.New_UI.PersoneelBrowser" %>
 
 <!DOCTYPE html>
 

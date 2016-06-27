@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgLoggedIn.aspx.cs" Inherits="ASPX_UI.LoggedIn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgLoggedIn.aspx.cs" Inherits="WebApplication6.UI.New_UI.LoggedIn" %>
 
 <!DOCTYPE html>
 

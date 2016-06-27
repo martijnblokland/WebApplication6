@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FilmToevoegenAanpassen.aspx.cs" Inherits="ASPX_UI.FilmToevoegen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FilmToevoegenAanpassen.aspx.cs" Inherits="WebApplication6.UI.New_UI.FilmToevoegen" %>
 
 <!DOCTYPE html>
 
