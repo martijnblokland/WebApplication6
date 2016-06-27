@@ -16,6 +16,7 @@ namespace Pit4Casus.BU
         bool inBezitStatus;
 
         List<int> AlleIds = new List<int>();
+        List<PersoonlijkeLijstSet> AllePersoonlijkeLijstFilms;
 
         public int PersoonlijkeLijstId
         {
@@ -104,11 +105,13 @@ namespace Pit4Casus.BU
         {
             using (pit4DBEntities context = new pit4DBEntities())
             {
-                foreach (PersoonlijkeLijstSet persoonlijkelijstfilm in context.PersoonlijkeLijstSet.ToList())
-                {
-                    AlleIds.Add(persoonlijkelijstfilm.PersoonlijkeLijstID);
-                }
+                AllePersoonlijkeLijstFilms = context.PersoonlijkeLijstSet.ToList();
             }
+            foreach (PersoonlijkeLijstSet persoonlijkelijstfilm in AllePersoonlijkeLijstFilms)
+            {
+                AlleIds.Add(persoonlijkelijstfilm.PersoonlijkeLijstID);
+            }
+
             return AlleIds;
         }
 
