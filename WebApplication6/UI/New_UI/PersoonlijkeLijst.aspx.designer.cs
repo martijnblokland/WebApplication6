@@ -31,6 +31,15 @@ namespace WebApplication6.UI.New_UI {
         protected global::System.Web.UI.WebControls.Button Btn_uitloggen;
         
         /// <summary>
+        /// placeholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl placeholder;
+        
+        /// <summary>
         /// Btn_verwijderen control.
         /// </summary>
         /// <remarks>

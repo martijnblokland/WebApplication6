@@ -224,6 +224,7 @@
     <Compile Include="CC\CC_PersoneelBeheerFuncties.cs" />
     <Compile Include="CC\CC_PersoneelBekijken.cs" />
     <Compile Include="CC\CC_PersoneelZoeken.cs" />
+    <Compile Include="CC\CC_PersoonlijkeLijst.cs" />
     <Compile Include="CC\CC_PersoonlijkeLijstBeheren.cs" />
     <Compile Include="CC\CC_PersoonlijkeLijstBekijken.cs" />
     <Compile Include="CC\CC_RatingGeven.cs" />

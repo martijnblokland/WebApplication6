@@ -27,6 +27,7 @@ namespace WebApplication6.UI.New_UI
             {
                 Session["login"] = true;
                 Session["username"] = Control_Inloggen.OphalenGebruikerNaam();
+                Session["userid"] = Control_Inloggen.OphalenGebruikerId();
                 if (Control_Inloggen.OphalenFunctie())
                 {
                     Session["user"] = true;

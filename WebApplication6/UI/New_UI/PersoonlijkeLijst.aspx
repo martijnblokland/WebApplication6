@@ -32,6 +32,60 @@
         margin: -10px;
         margin-top: -15px;
     }
+    #editor {
+        float: left;
+        width: 100%;
+        margin-top: -40px;
+        margin: 10px;
+    }
+    #placeholder {
+        display: block;
+        width: 1000px;
+        height: inherit;
+        margin: 10px;
+    }
+
+    .Count {
+        float: left;
+        width: 5%;
+        height: 20px;
+    }
+
+    .I {
+        float: left;
+        width: 5%;
+        height: 20px;
+    }
+
+    .PersoonlijkeLijstIDLabel {
+        float: left;
+        width: 5%;
+        height: 20px;
+    }
+
+    .FilmIDLabel {
+        float: left;
+        width: 20%;
+        height: 20px;
+    }
+
+    .GezienStatussenLabel {
+        float: left;
+        width: 20%;
+        height: 20px;
+    }
+
+    .InBezitStatussenLabel {
+        float: left;
+        width: 10%;
+        height: 20px;
+    }
+
+    .GezienStatussenLabel {
+        float: left;
+        width: 35%;
+        height: 20px;
+    }
     </style>
 </head>
 <body>
@@ -83,6 +137,9 @@
                     </tr>
              </table>
         <br />
+        <div id="placeholder" runat="server">
+        
+        <strong>ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gebruikersnaam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wachtwoord&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gebruikerstype</strong></div>
         <asp:Button ID="Btn_verwijderen" runat="server" Text="Film Verwijderen Uit Persoonlijke Lijst" />
     </div>
     </form>
