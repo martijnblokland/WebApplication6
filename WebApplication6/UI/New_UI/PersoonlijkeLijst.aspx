@@ -7,32 +7,32 @@
     <title></title>
     <style type="text/css">
     body {
-            margin: 0px;
-            padding: 0px;
-            width: 98%;
-            height: 100%;
-        }
-        #nav2 {
-            float: left;
-        }
-        nav {
-            float: left;
-            width: 100%;
-            height: 50px;
-            margin: 10px;
-        }
-        #wrp3 {
-            float: left;
-            width: 100%;
-            margin: 10px;
-            margin-top: -40px;
-        }
-        #Btn_uitloggen {
-            float: right;
-            margin: -10px;
-            margin-top: -15px;
-        }
-        </style>
+        margin: 0px;
+        padding: 0px;
+        width: 98%;
+        height: 100%;
+    }
+    #nav2 {
+        float: left;
+    }
+    nav {
+        float: left;
+        width: 100%;
+        height: 50px;
+        margin: 10px;
+    }
+    #wrp3 {
+        float: left;
+        width: 100%;
+        margin: 10px;
+        margin-top: -40px;
+    }
+    #Btn_uitloggen {
+        float: right;
+        margin: -10px;
+        margin-top: -15px;
+    }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -83,12 +83,6 @@
                     </tr>
              </table>
         <br />
-        <div id="placeholder" runat="server">
-        <strong>ID Naam&nbsp;Jaar Taal Duur Genre Gezien Wenslijst In Bezit<br />
-            </strong>
-            <asp:Label ID="lbl1" runat="server" Text="Label"></asp:Label>
-            <br />
-        </div>
         <asp:Button ID="Btn_verwijderen" runat="server" Text="Film Verwijderen Uit Persoonlijke Lijst" />
     </div>
     </form>
