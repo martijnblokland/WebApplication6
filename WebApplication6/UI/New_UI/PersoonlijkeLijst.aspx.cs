@@ -14,8 +14,6 @@ namespace WebApplication6.UI.New_UI
         CC_PersoonlijkeLijstBekijken Control_PersoonlijkeLijstBekijken;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Userid = Int32.Parse(Session["userid"].ToString());
-            Control_PersoonlijkeLijstBekijken = new CC_PersoonlijkeLijstBekijken(Userid);
             if (Session["login"] != null && (bool)Session["login"])
             {
 
@@ -24,29 +22,16 @@ namespace WebApplication6.UI.New_UI
             {
                 Response.Redirect("MsgNotLoggedIn.aspx");
             }
-            for (int i = 0; i < Control_PersoonlijkeLijstBekijken.AlleFilmIds.Count; i = i + 1)
+            int Userid = Int32.Parse(Session["userid"].ToString());
+            Control_PersoonlijkeLijstBekijken = new CC_PersoonlijkeLijstBekijken(Userid);
+            lbl1.Text = Userid.ToString();
+            if (Session["login"] != null && (bool)Session["login"])
             {
 
-                Label idLabel = new Label();
-                idLabel.CssClass = "IDLabel";
-                idLabel.Text = Control_PersoonlijkeLijstBekijken.AlleFilmIds[i].ToString();
-
-                Label gezienStatusLabel = new Label();
-                gezienStatusLabel.CssClass = "GezienStatusLabel";
-                gezienStatusLabel.Text = (Control_PersoonlijkeLijstBekijken.AlleGezienStatussen[i]).ToString();
-
-                Label wenslijstStatusLabel = new Label();
-                wenslijstStatusLabel.CssClass = "WensLijstStatusLabel";
-                wenslijstStatusLabel.Text = (Control_PersoonlijkeLijstBekijken.AlleWenslijstStatussen[i]).ToString();
-
-                Label inBezitStatusLabel = new Label();
-                inBezitStatusLabel.CssClass = "InBezitStatusLabel";
-                inBezitStatusLabel.Text = (Control_PersoonlijkeLijstBekijken.AlleInBezitStatussen[i]).ToString();
-
-                placeholder.Controls.Add(idLabel);
-                placeholder.Controls.Add(gezienStatusLabel);
-                placeholder.Controls.Add(wenslijstStatusLabel);
-                placeholder.Controls.Add(inBezitStatusLabel);
+            }
+            else
+            {
+                Response.Redirect("MsgNotLoggedIn.aspx");
             }
         }
 

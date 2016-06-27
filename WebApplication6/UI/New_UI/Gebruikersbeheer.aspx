@@ -6,20 +6,31 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-
+        body {
+            margin: 0px;
+            padding: 0px;
+            width: 98%;
+            height: 100%;
+        }
+        #nav2 {
+            float: left;
+        }
         nav {
             float: left;
             width: 100%;
             height: 50px;
-            margin: 10px;
-        }
+            margin-left: 10px;
+         }
         #Btn_uitloggen {
             float: right;
-            margin: 20px;
-            margin-top: -15px;
+            margin: -20px;
+            margin-top: -45px;
         }
         
         #editor {
+            float: left;
+            width: 100%;
+            margin-top: -40px;
             margin: 10px;
         }
         #placeholder {
@@ -52,8 +63,7 @@
             width: 55%;
             height: 20px;
         }
-
-        </style>
+    </style>
 </head>
 <body>
 <form id="form2" runat="server">

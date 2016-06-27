@@ -45,5 +45,10 @@ namespace Pit4Casus.CC
         {
             return Gebruiker.GebruikerWachtwoord;
         }
+
+        public int OphalenGebruikerId()
+        {
+            return Gebruiker.GebruikerId;
+        }
     }
 }

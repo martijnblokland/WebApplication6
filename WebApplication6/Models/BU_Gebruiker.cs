@@ -124,10 +124,13 @@ namespace Pit4Casus.BU
                 {
                     Gebruiker = context.GebruikerSet.Where(b => b.GebruikerID == id).FirstOrDefault();
 
-                    gebruikerId = Gebruiker.GebruikerID;
-                    gebruikerNaam = Gebruiker.GebruikerNaam;
-                    gebruikerWachtwoord = Gebruiker.GebruikerWachtwoord;
-                    gebruikerFunctie = Gebruiker.GebruikerFunctie;
+                    if (Gebruiker != null)
+                    {
+                        gebruikerId = Gebruiker.GebruikerID;
+                        gebruikerNaam = Gebruiker.GebruikerNaam;
+                        gebruikerWachtwoord = Gebruiker.GebruikerWachtwoord;
+                        gebruikerFunctie = Gebruiker.GebruikerFunctie;
+                    }
                 }
             }
         }

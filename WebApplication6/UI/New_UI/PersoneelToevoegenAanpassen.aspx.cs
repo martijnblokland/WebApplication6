@@ -12,6 +12,14 @@ namespace WebApplication6.UI.New_UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["login"] != null && (bool)Session["login"])
+            {
+
+            }
+            else
+            {
+                Response.Redirect("MsgNotLoggedIn.aspx");
+            }
             if (Session["user"] != null && (bool)Session["user"])
             {
 

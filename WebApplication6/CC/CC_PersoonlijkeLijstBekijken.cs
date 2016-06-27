@@ -64,7 +64,8 @@ namespace Pit4Casus.CC
 
         public CC_PersoonlijkeLijstBekijken(int gebruikerid)
         {
-            for (int i = 0; i < PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds().Count(); i = i + 1)
+            int a = PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds().Count();
+            for (int i = 0; i < a; i = i + 1)
             {
                 PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId(PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds()[i]);
 
