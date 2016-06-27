@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FilmToevoegenAanpassen.aspx.cs" Inherits="WebApplication6.UI.New_UI.FilmToevoegen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FilmToevoegenAanpassen.aspx.cs" Inherits="WebApplication6.UI.New_UI.FilmToevoegen" %>
 
 <!DOCTYPE html>
 
@@ -48,7 +48,7 @@
 <body>
 <form id="form1" runat="server">
     <nav>
-        <a href="Home.aspx">Home</a>  <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> <a href="Dashboard.aspx">Dashboard</a>
+        <a href="Dashboard.aspx">Dashboard</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> 
         <br />
     <div id="nav2">
         U bent nu op de pagina: Film Toevoegen/Aanpassen
@@ -158,7 +158,7 @@
                     <asp:ListItem>Kate Winslet</asp:ListItem>
                     <asp:ListItem>Natalie Portman</asp:ListItem>
                     </asp:ListBox>
-                <asp:Button ID="Btn_aanpassen_acteurs" runat="server" Text="Aanpassen" OnClick="Btn_aanpassen_acteurs_Click" />
+                    <asp:Button ID="Btn_aanpassen_acteurs" runat="server" Text="Aanpassen"/>
                 </td>
             </tr>
             <tr>

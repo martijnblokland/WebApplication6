@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Pit4Casus.CC;
 
 namespace WebApplication6.UI.New_UI
 {
@@ -10,11 +16,20 @@ namespace WebApplication6.UI.New_UI
             {
                 Btn_film_wijzigen.Visible = true;
                 Btn_film_verwijderen.Visible = true;
+                Btn_beoordeling_geven.Visible = false;
+                Btn_rating_opslaan.Visible = false;
+                Btn_toevoegen_aan_persoonlijke_lijst.Visible = false;
+                DropDownList1.Visible = false;
+                Label4.Visible = false;
             }
             else
             {
                 Btn_film_wijzigen.Visible = false;
                 Btn_film_verwijderen.Visible = false;
+                Btn_beoordeling_geven.Visible = true;
+                Btn_rating_opslaan.Visible = true;
+                Btn_toevoegen_aan_persoonlijke_lijst.Visible = true;
+                Label4.Visible = true;
             }
             if (Session["login"] != null && (bool)Session["login"])
             {

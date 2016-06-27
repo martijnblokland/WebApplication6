@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Personeel.aspx.cs" Inherits="WebApplication6.UI.New_UI.Personeel" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Personeel.aspx.cs" Inherits="WebApplication6.UI.New_UI.Personeel" %>
 
 <!DOCTYPE html>
 
@@ -45,8 +45,7 @@
 <body>
     <form id="form1" runat="server">
         <nav>
-        <a href="Home.aspx">Home</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> <a href="Dashboard.aspx">Dashboard</a> <a href="Inloggen.aspx">Inloggen</a>
-        <br />
+        <a href="Dashboard.aspx">Dashboard</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> 
         <br />
     <div id="nav2">
         U bent nu op de pagina: Personeel

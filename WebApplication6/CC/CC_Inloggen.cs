@@ -40,5 +40,10 @@ namespace Pit4Casus.CC
         {
             return Gebruiker.GebruikerNaam;
         }
+
+        public string OphalenWachtwoord()
+        {
+            return Gebruiker.GebruikerWachtwoord;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Film.aspx.cs" Inherits="WebApplication6.UI.New_UI.Film" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Film.aspx.cs" Inherits="WebApplication6.UI.New_UI.Film" %>
 
 <!DOCTYPE html>
 
@@ -45,7 +45,7 @@
 <body>
     <form id="form1" runat="server">
     <nav>
-        <a href="Home.aspx">Home</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> <a href="Dashboard.aspx">Dashboard</a> <a href="Inloggen.aspx">Inloggen</a>
+        <a href="Dashboard.aspx">Dashboard</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> 
         <br />
     <div id="nav2">
         U bent nu op de pagina: Film
@@ -80,12 +80,13 @@
                     <asp:Label ID="Label3" runat="server" Text=" "></asp:Label>
                 </td>
                 <td>
-                    Rating: </td>
+                    <asp:Label ID="Label4" runat="server" Text="Rating:"></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style3">Kleur film :</td>
                 <td>
-                    <asp:Label ID="Label4" runat="server" Text="Kleur"></asp:Label>
+                    <asp:Label ID="Label10" runat="server" Text="Kleur"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="DropDownList1" runat="server">

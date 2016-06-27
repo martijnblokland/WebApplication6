@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgFilmSave.aspx.cs" Inherits="WebApplication6.UI.New_UI.MsgFilmAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MsgFilmSave.aspx.cs" Inherits="WebApplication6.UI.New_UI.MsgFilmAdd" %>
 
 <!DOCTYPE html>
 

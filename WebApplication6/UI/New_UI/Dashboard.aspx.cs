@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Pit4Casus.CC;
 
 namespace WebApplication6.UI.New_UI
 {
@@ -37,7 +43,7 @@ namespace WebApplication6.UI.New_UI
                 Session["login"] = false;
                 Session["user"] = false;
             }
-            Response.Redirect("Home.aspx");
+            Response.Redirect("Inloggen.aspx");
         }
 
         protected void Btn_persoonlijke_lijst_Click(object sender, EventArgs e)
@@ -47,12 +53,12 @@ namespace WebApplication6.UI.New_UI
 
         protected void Btn_film_toevoegen_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FilmToevoegen.aspx");
+            Response.Redirect("FilmToevoegenAanpassen.aspx");
         }
 
         protected void Btn_personeel_toevoegen_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PersoneelToevoegen.aspx");
+            Response.Redirect("PersoneelToevoegenAanpassen.aspx");
         }
 
         protected void Btn_gebruikers_beheren_Click(object sender, EventArgs e)

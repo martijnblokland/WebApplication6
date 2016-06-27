@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgNotAuth.aspx.cs" Inherits="WebApplication6.UI.New_UI.Auth" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MsgNotAuth.aspx.cs" Inherits="WebApplication6.UI.New_UI.Auth" %>
 
 <!DOCTYPE html>
 

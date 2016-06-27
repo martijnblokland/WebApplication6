@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MsgPersoneelSave.aspx.cs" Inherits="WebApplication6.UI.New_UI.MsgPersoneelSave" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MsgPersoneelSave.aspx.cs" Inherits="WebApplication6.UI.New_UI.MsgPersoneelSave" %>
 
 <!DOCTYPE html>
 

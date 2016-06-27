@@ -146,7 +146,6 @@
     <Content Include="UI\New_UI\FilmBrowser.aspx" />
     <Content Include="UI\New_UI\FilmToevoegenAanpassen.aspx" />
     <Content Include="UI\New_UI\Gebruikersbeheer.aspx" />
-    <Content Include="UI\New_UI\Home.aspx" />
     <Content Include="UI\New_UI\Inloggen.aspx" />
     <Content Include="UI\New_UI\MsgFilmSave.aspx" />
     <Content Include="UI\New_UI\MsgLoggedIn.aspx" />
@@ -280,13 +279,6 @@
     </Compile>
     <Compile Include="UI\New_UI\Gebruikersbeheer.aspx.designer.cs">
       <DependentUpon>Gebruikersbeheer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UI\New_UI\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\New_UI\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\New_UI\Inloggen.aspx.cs">
       <DependentUpon>Inloggen.aspx</DependentUpon>

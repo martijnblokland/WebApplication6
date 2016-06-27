@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication6.CC;
+using Pit4Casus.CC;
+
 
 namespace WebApplication6.UI.New_UI
 {
@@ -81,9 +82,9 @@ namespace WebApplication6.UI.New_UI
             Response.Redirect("MsgLoggedOut.aspx");
         }
 
-        protected void GebruikerNaamTextBox_OnClick(object sender, EventArgs e)
+        protected void Btn_gebruiker_registreren_Click(object sender, EventArgs e)
         {
-            GebruikerNaamTextBox.Text = "";
+            Response.Redirect("Registreren.aspx");
         }
     }
 }

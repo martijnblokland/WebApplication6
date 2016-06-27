@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Pit4Casus.CC;
 
 namespace WebApplication6.UI.New_UI
 {
@@ -11,7 +17,7 @@ namespace WebApplication6.UI.New_UI
 
         protected void Btn_OK_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("Inloggen.aspx");
         }
     }
 }

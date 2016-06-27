@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Gebruikersbeheer.aspx.cs" Inherits="WebApplication6.UI.New_UI.GebruikerVerwijderen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Gebruikersbeheer.aspx.cs" Inherits="WebApplication6.UI.New_UI.GebruikerVerwijderen" %>
 
 <!DOCTYPE html>
 
@@ -58,7 +58,7 @@
 <body>
 <form id="form2" runat="server">
     <nav>
-        <a href="Home.aspx">Home</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> <a href="Dashboard.aspx">Dashboard</a> <a href="Inloggen.aspx">Inloggen</a>
+        <a href="Dashboard.aspx">Dashboard</a> <a href="FilmBrowser.aspx">Films</a> <a href="PersoneelBrowser.aspx">Personeel</a> 
         <br />
     <div id="nav2">
         U bent nu op de pagina: Gebruikersbeheer
@@ -73,6 +73,7 @@
         <asp:CheckBox ID="AdminCheckBox" runat="server" Text="Administrator" />
         &nbsp;<asp:Button ID="Btn_aanpassen" runat="server" Text="Aanpassingen Opslaan" OnClick="Btn_aanpassen_Click" Width="160px" />
         <asp:Button ID="Btn_verwijderen" runat="server" Text="Verwijderen" OnClick="Btn_verwijderen_Click" Width="160px" />
+        <asp:Button ID="Btn_gebruiker_registreren" runat="server" OnClick="Btn_gebruiker_registreren_Click" Text="Gebruiker Registreren" />
     </div>
     <div id="placeholder" runat="server">
         
