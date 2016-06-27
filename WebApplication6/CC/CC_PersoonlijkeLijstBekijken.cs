@@ -123,7 +123,8 @@ namespace Pit4Casus.CC
         // Boolean geeft aan of de film kan worden geselecteerd op basis van het gebruikerid
         public bool FilmSelecteren(int persoonlijkelijstid, int gebruikerid)
         {
-            PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId(persoonlijkelijstid);
+            PersoonlijkeLijst.PersoonlijkeLijstId = persoonlijkelijstid;
+            PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId();
             if (PersoonlijkeLijst.GebruikerId != gebruikerid)
             {
                 PersoonlijkeLijst = new BU_PersoonlijkeLijst();

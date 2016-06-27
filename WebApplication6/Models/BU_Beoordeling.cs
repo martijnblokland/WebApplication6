@@ -16,6 +16,71 @@ namespace Pit4Casus.BU
 
         List<int> AlleIds = new List<int>();
 
+        public int BeoordelingId
+        {
+            get
+            {
+                return beoordelingId;
+            }
+
+            set
+            {
+                beoordelingId = value;
+            }
+        }
+
+        public int FilmId
+        {
+            get
+            {
+                return filmId;
+            }
+
+            set
+            {
+                filmId = value;
+            }
+        }
+
+        public int GebruikerId
+        {
+            get
+            {
+                return gebruikerId;
+            }
+
+            set
+            {
+                gebruikerId = value;
+            }
+        }
+
+        public string Review
+        {
+            get
+            {
+                return review;
+            }
+
+            set
+            {
+                review = value;
+            }
+        }
+
+        public int Rating
+        {
+            get
+            {
+                return rating;
+            }
+
+            set
+            {
+                rating = value;
+            }
+        }
+
         // Lege BU_Beoordeling
         public BU_Beoordeling()
         { }
@@ -61,11 +126,11 @@ namespace Pit4Casus.BU
         }
 
         // Beoordeling ophalen met beoordelingId (READ)
-        public void ReadBeoordelingMetId()
+        public void ReadBeoordelingMetFilmIdEnGebruikerId()
         {
             using (pit4DBEntities context = new pit4DBEntities())
             {
-                if (context.BeoordelingSet.Any(a => a.BeoordelingID == beoordelingId))
+                if (context.BeoordelingSet.Any(b => b.FilmFilmID == filmId && b.GebruikerGebruikerID == gebruikerId))
                 {
                     Beoordeling = context.BeoordelingSet.Where(b => b.BeoordelingID == beoordelingId).FirstOrDefault();
 
