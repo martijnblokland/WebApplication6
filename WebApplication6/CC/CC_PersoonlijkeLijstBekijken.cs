@@ -62,11 +62,52 @@ namespace Pit4Casus.CC
             }
         }
 
+        public int GeselecteerdePersoonlijkeLijstId
+        {
+            get
+            {
+                return geselecteerdePersoonlijkeLijstId;
+            }
+        }
+
+        public int GeselecteerdeFilmId
+        {
+            get
+            {
+                return geselecteerdeFilmId;
+            }
+        }
+
+        public bool GeselecteerdeGezienStatus
+        {
+            get
+            {
+                return geselecteerdeGezienStatus;
+            }
+        }
+
+        public bool GeselecteerdeWenslijstStatus
+        {
+            get
+            {
+                return geselecteerdeWenslijstStatus;
+            }
+        }
+
+        public bool GeselecteerdeInBezitStatus
+        {
+            get
+            {
+                return geselecteerdeInBezitStatus;
+            }
+        }
+
         public CC_PersoonlijkeLijstBekijken(int gebruikerid)
         {
             for (int i = 0; i < PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds().Count(); i = i + 1)
             {
-                PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId(PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds()[i]);
+                PersoonlijkeLijst.FilmId = PersoonlijkeLijst.AllePersoonlijkeLijstFilmIds()[i];
+                PersoonlijkeLijst.OphalenPersoonlijkeLijstFilmMetId();
 
                 if (PersoonlijkeLijst.GebruikerId == gebruikerid)
                 {

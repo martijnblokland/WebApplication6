@@ -13,5 +13,104 @@ namespace Pit4Casus.BU
         int gebruikerId;
         string review;
         int rating;
+
+        List<int> AlleIds = new List<int>();
+
+        // Lege BU_Beoordeling
+        public BU_Beoordeling()
+        { }
+
+        // Lijst van alle beoordeling id's
+        public List<int> AlleBeoordelingIds()
+        {
+            using (pit4DBEntities context = new pit4DBEntities())
+            {
+                foreach (BeoordelingSet beoordeling in context.BeoordelingSet.ToList())
+                {
+                    AlleIds.Add(beoordeling.BeoordelingID);
+                }
+            }
+            return AlleIds;       
+        }
+
+        // Nieuwe Beoordeling aan database toevoegen (CREATE)
+        public void CreateBeoordeling()
+        {
+            using (pit4DBEntities context = new pit4DBEntities())
+            {
+                if (context.BeoordelingSet.Any(b => b.FilmFilmID != filmId || b.GebruikerGebruikerID != gebruikerId))
+                {
+                    Beoordeling.FilmFilmID = filmId;
+                    Beoordeling.GebruikerGebruikerID = gebruikerId;
+                    Beoordeling.Review = review;
+                    Beoordeling.Rating = rating;
+
+                    context.BeoordelingSet.Add(Beoordeling);
+                    context.SaveChanges();
+
+                    // Nieuwe Beoordeling uit database halen
+                    Beoordeling = context.BeoordelingSet.Where(b => b.FilmFilmID == filmId && b.GebruikerGebruikerID == gebruikerId).FirstOrDefault();
+
+                    beoordelingId = Beoordeling.BeoordelingID;
+                    filmId = Beoordeling.FilmFilmID;
+                    gebruikerId = Beoordeling.GebruikerGebruikerID;
+                    review = Beoordeling.Review;
+                    rating = Beoordeling.Rating;
+                }
+            }
+        }
+
+        // Beoordeling ophalen met beoordelingId (READ)
+        public void ReadBeoordelingMetId()
+        {
+            using (pit4DBEntities context = new pit4DBEntities())
+            {
+                if (context.BeoordelingSet.Any(a => a.BeoordelingID == beoordelingId))
+                {
+                    Beoordeling = context.BeoordelingSet.Where(b => b.BeoordelingID == beoordelingId).FirstOrDefault();
+
+                    filmId = Beoordeling.FilmFilmID;
+                    gebruikerId = Beoordeling.GebruikerGebruikerID;
+                    review = Beoordeling.Review;
+                    rating = Beoordeling.Rating;
+                }
+            }
+        }
+
+        // Bestaande Beoordeling aanpassingen opslaan in database (UPDATE)
+        public void UpdateBeoordeling()
+        {
+            if (Beoordeling.BeoordelingID > 0)
+            {
+                Beoordeling.FilmFilmID = filmId;
+                Beoordeling.GebruikerGebruikerID = gebruikerId;
+                Beoordeling.Review = review;
+                Beoordeling.Rating = rating;
+
+                using (pit4DBEntities context = new pit4DBEntities())
+                {
+                    context.Entry(Beoordeling).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        // Bestaande Beoordeling verwijderen uit de database (DELETE)
+        public void DeleteBeoordeling()
+        {
+            using (pit4DBEntities context = new pit4DBEntities())
+            {
+                if (context.BeoordelingSet.Any(a => a.BeoordelingID == beoordelingId))
+                {
+                    Beoordeling = context.BeoordelingSet.Where(b => b.BeoordelingID == beoordelingId).FirstOrDefault();
+                }
+            }
+
+            using (pit4DBEntities context = new pit4DBEntities())
+            {
+                context.Entry(Beoordeling).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
     }
 }

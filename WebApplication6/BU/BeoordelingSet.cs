@@ -18,7 +18,7 @@ namespace Pit4Casus.BU
         public int FilmFilmID { get; set; }
         public int GebruikerGebruikerID { get; set; }
         public string Review { get; set; }
-        public Nullable<int> Rating { get; set; }
+        public int Rating { get; set; }
     
         public virtual FilmSet FilmSet { get; set; }
         public virtual GebruikerSet GebruikerSet { get; set; }

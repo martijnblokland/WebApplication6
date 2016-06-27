@@ -117,7 +117,7 @@ namespace Pit4Casus.BU
         {
             using (pit4DBEntities context = new pit4DBEntities())
             {
-                if (context.PersoonlijkeLijstSet.Any(a => a.FilmFilmID != filmId))
+                if (context.PersoonlijkeLijstSet.Any(a => a.FilmFilmID != filmId || a.GebruikerGebruikerID != gebruikerId))
                 {
                     PersoonlijkeLijst.FilmFilmID = filmId;
                     PersoonlijkeLijst.GebruikerGebruikerID = gebruikerId;
@@ -129,7 +129,7 @@ namespace Pit4Casus.BU
                     context.SaveChanges();
 
                     // Nieuwe Persoonlijke Lijst Film uit database halen
-                    PersoonlijkeLijst = context.PersoonlijkeLijstSet.Where(b => b.FilmFilmID == filmId).FirstOrDefault();
+                    PersoonlijkeLijst = context.PersoonlijkeLijstSet.Where(b => b.FilmFilmID == filmId && b.GebruikerGebruikerID == gebruikerId).FirstOrDefault();
 
                     persoonlijkeLijstId = PersoonlijkeLijst.PersoonlijkeLijstID;
                     filmId = PersoonlijkeLijst.FilmFilmID;
@@ -142,7 +142,7 @@ namespace Pit4Casus.BU
         }
 
         // Persoonlijke Lijst Film ophalen met persoonlijkelijstId (READ)
-        public void OphalenPersoonlijkeLijstFilmMetId(int persoonlijkelijstid)
+        public void OphalenPersoonlijkeLijstFilmMetId()
         {
             using (pit4DBEntities context = new pit4DBEntities())
             {
@@ -159,7 +159,7 @@ namespace Pit4Casus.BU
             }
         }
 
-        // Bestaande Persoonlijke Lijst Film aanpassingen opslaan in database (USE)
+        // Bestaande Persoonlijke Lijst Film aanpassingen opslaan in database (UPDATE)
         public void PersoonlijkeLijstFilmAanpassingenOpslaan()
         {
             if (PersoonlijkeLijst.PersoonlijkeLijstID > 0)
