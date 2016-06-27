@@ -132,7 +132,7 @@ namespace Pit4Casus.BU
             {
                 if (context.BeoordelingSet.Any(b => b.FilmFilmID == filmId && b.GebruikerGebruikerID == gebruikerId))
                 {
-                    Beoordeling = context.BeoordelingSet.Where(b => b.BeoordelingID == beoordelingId).FirstOrDefault();
+                    Beoordeling = context.BeoordelingSet.Where(b => b.FilmFilmID == filmId && b.GebruikerGebruikerID == gebruikerId).FirstOrDefault();
 
                     filmId = Beoordeling.FilmFilmID;
                     gebruikerId = Beoordeling.GebruikerGebruikerID;
